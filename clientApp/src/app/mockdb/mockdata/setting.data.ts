@@ -1,8 +1,8 @@
-import { Setting } from '../../model/Setting';
+import { Setting } from '../../model/setting';
 
 export const settings: Setting[] = [
   {
-    settingId: 1,
+    id: 1,
     alias: 'global',
     trainersPerPage: 0,
     reportGrads: 22,
@@ -12,7 +12,7 @@ export const settings: Setting[] = [
     maxBatchSize: 20,
     trainerBreakDays: 14,
     defaultLocation: 1,
-    defaultBuilding: null,
+    defaultBuilding: 64,
     defaultNamePattern: '$y$m $mmm$d $c'
   }
 ];

@@ -6,6 +6,9 @@
 export const environment = {
   production: false,
 
+  baseUrl: 'http://localhost:4200',
+  baseApiUrl: '',
+
   //routers
   appRoutes: {
     login: '',
@@ -21,29 +24,30 @@ export const environment = {
 
   apiUrls: {
     batchController: {
-      baseUrl: 'http://batch-service.cfapps.io',
-      createBatch: '/all/batch/create',
-      deleteBatch: '/all/batch/delete/',
-      updateBatch: '/all/batch/update',
-      findCommonLocations: '/all/locations',
-      getAllBatches: '/qc/batch/all',
-      findAllBatchesByTrainer: '/trainer/batch/all',
-      createWeek: '/trainer/week/new/',
-      getAllVpBatches: '/vp/batch/all',
-      getAllCurrentBatches: '/vp/batch/all/current'
+      baseUrl: 'api/batch',
+      createBatch: '',
+      deleteBatch: '/',
+      updateBatch: '',
+      findCommonLocations: '',
+      getAllBatches: '',
+      findAllBatchesByTrainer: '/',
+      createWeek: '',
+      getAllVpBatches: '',
+      getAllCurrentBatches: ''
     },
 
     addressController: {
-      baseUrl: 'http://address-service.cfapps.io',
-      createLocation: '/vp/location/create',
-      updateLocation: '/vp/location/update',
-      getAllLocations: '/all/location/all',
-      removeLocation: '/vp/location/delete',
-      reactivateLocation: '/vp/location/reactivate'
+      baseUrl: 'api/location',
+      createLocation: '',
+      updateLocation: '',
+      getAllLocations: '',
+      removeLocation: '/',
+      getLocation: '/',
+      reactivateLocation: ''
     },
 
     buildingController: {
-      baseUrl: 'http://address-service.cfapps.io/api/v2/building',
+      baseUrl: 'api/building',
       createBuilding: '',
       retrieveBuilding: '/',
       updateBuilding: '',
@@ -52,75 +56,68 @@ export const environment = {
     },
 
     locationController: {
-      baseUrl: 'http://address-service.cfapps.io/api/v2/location'
+      baseUrl: 'api/location',
+      createLocation: '',
+      retrieveLocation: '/',
+      updateLocation: '',
+      deleteLocation: '/',
+      retrieveAllLocation: ''
     },
 
-    curriculumService: {
-      base: this.baseUrl,
-      api: '/curriculum',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
+    curriculumController: {
+      baseUrl: 'api/curriculum',
+      createCurriculum: '',
+      retrieveCurriculum: '/',
+      updateCurriculum: '',
+      deleteCurriculum: '/',
+      retrieveAllCurricula: '',
+      retrieveAllActiveCurricula: '',
+      retrieveAllCore: '',
+      retrieveAllActiveCore: '',
+      retrieveAllFocus: '',
+      retrieveAllActiveFocus: ''
     },
-    locationService: {
-      base: this.baseUrl,
-      api: '/location',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
+
+    settingController: {
+      baseUrl: 'api/setting',
+      createSetting: '',
+      retrieveSetting: '/',
+      getGlobalSetting: '',
+      updateSetting: '',
+      deleteSetting: '/'
     },
-    settingsService: {
-      base: this.baseUrl,
-      api: '/setting',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
+
+    skillController: {
+      baseUrl: 'api/skill',
+      findAllActive: '',
+      findAll: '',
+      findSkillById: '/',
+      updateSkillCaliber: '',
+      saveSkill: '',
+      createSkill: '',
+      retrieveSkill: '/',
+      updateSkillMinerva: '',
+      deleteSkill: '/',
+      retrieveAllSkills: '',
+      retrieveSkillsByIds: ''
     },
-    skillService: {
-      base: this.baseUrl,
-      api: '/skill',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
+
+    trainerController: {
+      baseUrl: 'api/trainer',
+      createTrainer: '',
+      updateTrainer: '',
+      findTrainer: '/',
+      makeInactive: '/',
+      getAllTrainersTitles: '',
+      getAllTrainers: ''
     },
-    trainerService: {
-      base: this.baseUrl,
-      api: '/trainer',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
-    },
-    unavailableService: {
-      base: this.baseUrl,
-      api: '/unavailable',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
-    },
-    centralConfig: {
-      base: this.baseUrl,
-      api: '/centralConfig',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
-    },
-    buildingService: {
-      base: this.baseUrl,
-      api: '/building',
-      get: '/',
-      update: '/',
-      remove: '/',
-      create: '/'
+
+    unavailableController: {
+      baseUrl: 'api/unavailable',
+      createUnavailability: '',
+      retrieveUnavailability: '/',
+      deleteUnavailability: '',
+      retrieveAllUnavailabilities: ''
     }
-  },
-
-  baseUrl: 'http://localhost:4200',
-  baseApiUrl: 'https://assignforceback.cfapps.io/api/v2'
+  }
 };

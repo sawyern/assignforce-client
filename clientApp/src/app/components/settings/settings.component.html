@@ -1,177 +1,190 @@
 <form class="padding-top" #settingsForm="ngForm" (ngSubmit)="save()">
-    <mat-grid-list cols='4' rowHeight="50px">
-      <mat-grid-tile
-        [colspan] = "2"
-        [rowspan] = "1">
-      <label for="trainerPerPage" >Timeline Trainers Per Page</label>
-    </mat-grid-tile>
-
-      <mat-grid-tile
+  <mat-grid-list cols='4' rowHeight="50px">
+    <mat-grid-tile
       [colspan] = "2"
       [rowspan] = "1">
-        <mat-form-field>
-            <input required matInput name="trainerPerPage" type="number" [(ngModel)]="trainerPerPage">
-        </mat-form-field>
-      </mat-grid-tile>
-
-
-    <mat-grid-tile
-    [colspan] = "2"
-    [rowspan] = "1">
-        <label for="outgoingGrads">Reports Outgoing Grads</label>
+      <label class="leftAlign" for="trainerPerPage" >Timeline Trainers Per Page</label>
     </mat-grid-tile>
 
     <mat-grid-tile
     [colspan] = "2"
     [rowspan] = "1">
       <mat-form-field>
-        <input matInput name="outgoingGrads" type="number" [(ngModel)]="outgoingGrads">
+          <input matInput required name="trainerPerPage" type="number" [(ngModel)]="setting.trainersPerPage">
       </mat-form-field>
     </mat-grid-tile>
 
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+        <label class="leftAlign" for="outgoingGrads">Reports Outgoing Grads</label>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="outgoingGrads" type="number" [(ngModel)]="setting.reportGrads">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="candidateIncoming">Reports Candidates Incoming</label>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="candidateIncoming" type="number" [(ngModel)]="setting.reportIncomingGrads">
+      </mat-form-field>
+    </mat-grid-tile>
 
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="batchLocation">Default Batch Location</label>
+    </mat-grid-tile>
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <mat-select [(ngModel)]="setting.defaultLocation" name="defaultLocation">
+          <mat-option *ngFor="let location of locations" [value]="location.id">
+            {{ location.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="batchBuilding">Default Batch Building</label>
+    </mat-grid-tile>
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <mat-select [(ngModel)]="setting.defaultBuilding" name="defaultBuilding">
+          <mat-option *ngFor="let building of buildings" [value]="building.id">
+            {{ building.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="minBatchSize">Minimum Batch Size</label>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="candidateIncoming">Reports Candidates Incoming</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="minBatchSize" type="number" [(ngModel)]="setting.minBatchSize">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="candidateIncoming" type="number" [(ngModel)]="candidateIncoming">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="maxBatchSize">Maximum Batch Size</label>
+    </mat-grid-tile>
 
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="maxBatchSize" type="number" [(ngModel)]="setting.maxBatchSize">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="batchLocation">Default Batch Location</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="batchDuration">Default Batch Length</label>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="batchLocation" type="number" [(ngModel)]="batchLocation">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="batchDuration" type="number" [(ngModel)]="setting.batchLength">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="batchBuilding">Default Batch Building</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="daysBetweenBatches">Minimum Day Between Trainer Batches</label>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="batchBuilding" type="number" [(ngModel)]="batchBuilding">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="daysBetweenBatches" type="number" [(ngModel)]="setting.trainerBreakDays">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="minBatchSize">Minimum Batch Size</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <label class="leftAlign" for="namePattern">Default Batch Name Pattern</label>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="minBatchSize" type="number" [(ngModel)]="minBatchSize">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "2"
+    [rowspan] = "1">
+      <mat-form-field>
+        <input matInput required name="namePattern" type="text" readonly [(ngModel)]="setting.defaultNamePattern">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="maxBatchSize">Maximum Batch Size</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "1"
+    [rowspan] = "1">
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="maxBatchSize" type="number" [(ngModel)]="maxBatchSize">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "1"
+    [rowspan] = "1">
+      <button mat-raised-button class="btn-orange" type="submit" [disabled]="!settingsForm.form.valid">SAVE</button>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="batchDuration">Default Batch Length</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "1"
+    [rowspan] = "1">
+      <button mat-raised-button (click)="reset($event)">RESET</button>
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="batchDuration" type="number" [(ngModel)]="batchDuration">
-    </mat-form-field>
-  </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "1"
+    [rowspan] = "1">
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="daysBetweenBatches">Minimum Day Between Trainer Batches</label>
-  </mat-grid-tile>
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+    </mat-grid-tile>
 
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="daysBetweenBatches" type="number" [(ngModel)]="daysBetweenBatches">
-    </mat-form-field>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <label for="namePattern">Default Batch Name pattern</label>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "2"
-  [rowspan] = "1">
-    <mat-form-field>
-      <input matInput name="namePattern" type="number" [(ngModel)]="namePattern">
-    </mat-form-field>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "1"
-  [rowspan] = "1">
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "1"
-  [rowspan] = "1">
-    <button mat-raised-button class="btn-orange" type="submit" [disabled]="!settingsForm.form.valid">SAVE</button>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "1"
-  [rowspan] = "1">
-    <button mat-raised-button (click)="reset($event)">RESET</button>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-  [colspan] = "1"
-  [rowspan] = "1">
-  </mat-grid-tile>
-
-</mat-grid-list>
-
+    <mat-grid-tile
+      [colspan] = "2"
+      [rowspan] = "1">
+      <mat-progress-bar mode="buffer" *ngIf="isLoading"></mat-progress-bar>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+    </mat-grid-tile>
+  </mat-grid-list>
 </form>

@@ -14,16 +14,13 @@ btn .btn-orange:focus {
 }
 
 .padding-top {
-  padding-top: 5%;
+  padding-top: 10%;
+  max-width: 600px;
+  /*padding-left: 10%;*/
+  /*padding-right: 10%;*/
+  margin: 0 auto;
 }
 
-form mat-grid-list {
-  /* justify-content: flex-start !important; */
+.leftAlign {
   text-align: left;
-  /* position: absolute; */
 }
-
-/* .btn-primary .btn-orange, 
-.btn-primary:hover .btn-orange, 
-.btn-primary:focus .btn-orange,
-.btn-primary:active .btn-orange */

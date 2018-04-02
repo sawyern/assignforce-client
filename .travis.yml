@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- 8.9.4
+install:
+- npm install
+- npm i headless-chromium
+script:
+- cd clientApp
+- npm run lint -- --fix
+# - npm run test: once
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: pdawson2090@gmail.com
+  password:
+    secure: IF48X2Cykc/cMFPJs79CsqS3PGBaB/UYtixbXxg6mTQpOTjsaTAwX+jpGTs2M/UMiqvlV4DqkGEg8/Rh8+fNeVgPQnqLYbotSbP9ResPlFtWdr7d4brJwo2mSCF+7Fh3L+2uLKMEImLZY+9f23M7COu0+dF1na4dO51p0Y6YsHkvREwpwp0XdhNpk6O1hnUUXely9rjtEutEMuoxtSWDqv8KTSG7T1f/nLdU8n6HJbAeLtB8Yu9+541rTizzIYyWBmDnKfZvnDnF4RvJ6oO26kp0SsvYi4nv41uq7zpGzG6/wnEl1IGcC9nsI7Fgf124T8H/kBa/KzYHc8vDooZLRc52wJTz8j1/tO6Lg2Z8cXQG1vz7K6WEhhC0JuDCpQCDPRX0aefSKF9bAR3Rgarj6Xxak/hagbKtrlu+PJvVPmipvLmW1Q5VumEpbwCrfacY3nn93b0e9LxWeBH5+RzEluTTR8jJvpi3eyHTDD0UCISV3nI68H6rr0u3524Zk0AlS4ZYLySridsZxZzdSEVhBPcv+BnBryUvllPUwLM2MKjE0cQwPryM5OSm6RIgMXH7JNnIbpFhg2JqVHZULfJUWsJ+7m/vori64Jt5sMTMAjcDxPPbkHCmpsV6bX0LlK2mmMOBuq5118MW0idh+If0QF7/YlzqHCUSOYqSpzWHAEo=
+  organization: august-duet.org
+  space: development
+  on:
+    repo: revaturelabs/assignforce-client
+    branch: staging

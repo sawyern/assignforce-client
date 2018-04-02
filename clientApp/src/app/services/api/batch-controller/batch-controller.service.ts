@@ -9,7 +9,7 @@ import { Location } from '../../../model/Location';
 export class BatchControllerService {
   constructor(private http: HttpClient) {}
 
-  batchController = environment.apiUrls.batchController;
+  private batchController = environment.apiUrls.batchController;
 
   public createBatch(batch: Batch): Observable<Batch> {
     return this.http.post<Batch>(this.batchController.createBatch, batch);

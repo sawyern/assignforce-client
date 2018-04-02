@@ -1,5 +1,5 @@
 export class Setting {
-  settingId: number;
+  id: number;
   alias: string;
   trainersPerPage: number;
   reportGrads: number;
@@ -13,7 +13,7 @@ export class Setting {
   defaultNamePattern: string;
 
   constructor(
-    settingId: number,
+    id: number,
     alias: string,
     trainersPerPage: number,
     reportGrads: number,
@@ -26,7 +26,7 @@ export class Setting {
     defaultBuilding: number,
     defaultNamePattern: string
   ) {
-    this.settingId = settingId;
+    this.id = id;
     this.alias = alias;
     this.trainersPerPage = trainersPerPage;
     this.reportGrads = reportGrads;

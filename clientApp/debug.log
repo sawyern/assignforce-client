@@ -1,0 +1,4 @@
+[0401/062705.573:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0401/062859.483:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\pdaws\AppData\Local\Temp\karma-14848001\Crashpad: The system cannot find the path specified. (0x3)
+[0401/063010.488:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0401/063056.342:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: The pipe is being closed. (0xE8)

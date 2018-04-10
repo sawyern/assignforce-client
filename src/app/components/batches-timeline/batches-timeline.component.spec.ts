@@ -97,18 +97,18 @@ describe('BatchesTimelineComponent', () => {
     expect(trainers[0].width).toBeTruthy();
   });
 
-  // it('should get a different color for each core curriculum', () => {
-  //   const jcolor = component.getColorForcurriculum(1);
-  //   const scolor = component.getColorForcurriculum(2);
-  //   const dcolor = component.getColorForcurriculum(3);
-  //   const ccolor = component.getColorForcurriculum(4);
-  //   expect(jcolor).not.toEqual(scolor);
-  //   expect(jcolor).not.toEqual(dcolor);
-  //   expect(jcolor).not.toEqual(ccolor);
-  //   expect(scolor).not.toEqual(dcolor);
-  //   expect(scolor).not.toEqual(ccolor);
-  //   expect(dcolor).not.toEqual(ccolor);
-  // });
+  it('should get a different color for each core curriculum', () => {
+    const jcolor = component.getColorForcurriculum(13);
+    const scolor = component.getColorForcurriculum(14);
+    const dcolor = component.getColorForcurriculum(15);
+    const ccolor = component.getColorForcurriculum(16);
+    expect(jcolor).not.toEqual(scolor);
+    expect(jcolor).not.toEqual(dcolor);
+    expect(jcolor).not.toEqual(ccolor);
+    expect(scolor).not.toEqual(dcolor);
+    expect(scolor).not.toEqual(ccolor);
+    expect(dcolor).not.toEqual(ccolor);
+  });
 
   it('should return a list of months and their position', () => {
     const months = component.getTimescale();

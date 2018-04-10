@@ -655,16 +655,19 @@ export class BatchesTimelineComponent implements OnInit, AfterViewInit {
   getColorForcurriculum(currId: number) {
     let color = '';
     switch (currId) {
-      case 1:
+      case 13:
         color = '#1c77b4'; // java
         break;
-      case 2:
+      case 14:
         color = '#ff7f0e'; // .net
         break;
-      case 3:
+      case 15:
         color = '#aec7e8'; // sdet
         break;
-      case 4:
+      case 16:
+        color = '#D5F5E3'; // uh
+        break;
+      case 17:
         color = '#ffbb78'; // custom
         break;
       default:
